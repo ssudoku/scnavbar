@@ -87,10 +87,23 @@ html, body {
     position: absolute;
     width: 300px;
     height: auto;
-    left: 0;
-    top:0;
+    right: 0;
+    top:98%;
     background: #FFFFFF;
     padding: 5px;
+    box-shadow: 0 0 5px 0 rgba(0,0,0,0.2);
+}
+.navbar-container .dropdown:before {
+    content: "";
+    display: block;
+    position: absolute;
+    right: 24px;
+    top: -5px;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid #FFFFFF;
 }
 .navbar-container .dropdown .inner {
     background: #FFFFFF;
@@ -98,9 +111,6 @@ html, body {
 }
 .navbar-container .dropdown.active {
     display: block;
-}
-.navbar-container .features .inner {
-    height: 240px;
 }
 .navbar-container .dropdown .inner a{
     color: #666666;
@@ -110,20 +120,16 @@ html, body {
     font-family: "Montserrat",Roboto,sans-serif;
 }
 .navbar-container .dropdown .item-text{
-    padding: 5px 0;
     display: inline-block;
+    font-family: "Roboto Condensed", "Helvetica Neue", sans-serif;
 }
-.navbar-container .dropdown .item-text:hover{
+.navbar-container .dropdown li:hover .item-text{
     color: #134C5D;
-}
-.navbar-container .dropdown .options-item{
-    text-align: center;
-    float:left;
-    width: 50%;
 }
 .navbar-container .dropdown .thumbnails{
     overflow: hidden;
-    border-bottom: 1px solid #CCCCCC;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #EEEEEE;
 }
 .navbar-container .features .item-text:before{
     content: ">";
@@ -133,19 +139,23 @@ html, body {
     margin-right: 8px;
     font-size: 0.875rem;
 }
-.navbar-container .features .item-text:hover::before{
-    color: #07F9FF;
+.navbar-container .options {
+    position: relative;
+}
+.navbar-container .options-items {
+    text-align: center;
 }
 .navbar-container .options .static-items{
     text-align: center;
 }
-.navbar-container .options .static-link{
+.navbar-container .options .dropdown li{
     display: inline-block;
     width: 30%;
     text-align: center;
 }
-.navbar-container .options .icon{
-    display: none;
+.navbar-container .options .dropdown li a{
+    display: inline-block;
+    padding: 5px 0;
 }
 .navbar-container .options-title, .navbar-container .menu-title {
     position: relative;
@@ -175,6 +185,10 @@ html, body {
     display: block;
     height: 20px;
     width: auto;
+    cursor: pointer;
+}
+.navbar-container .options:hover .dropdown{
+    display: block;
 }
 .navbar-container .logo {
     float: left;
@@ -188,6 +202,7 @@ html, body {
 }
 .navbar-container .more-container, .navbar-container .more-title, .navbar-container .trending {
     display: inline-block;
+    position: relative;
 }
 .navbar-container .more-title {
     text-transform: uppercase;
@@ -196,11 +211,23 @@ html, body {
     font-size: 1rem;
     margin-bottom: 0;
     cursor: pointer;
+    padding: 14px;
 }
+.navbar-container .more-container:hover .dropdown {
+    display: block;
+}
+.navbar-container .more-container:hover .more-title {
+    background: rgba(0,0,0,0.15);
+}
+
 .navbar-container .trending-item {
-    margin: 0 25px 0 0;
+    display: inline-block;
+    padding: 14px;
     text-transform: uppercase;
     font-family: "Montserrat", Roboto, sans-serif;
+}
+.navbar-container .trending-item:hover {
+    background: rgba(0,0,0,0.15);
 }
 .navbar-container .trending .item-label{
     display: none;
@@ -221,6 +248,25 @@ html, body {
 }
 .navbar-container .main .features{
     padding: 14px 15px;
+    position: relative;
+}
+.navbar-container .main .features .dropdown .blog{
+    clear: both;
+    border-top: 1px solid #EEEEEE;
+}
+.navbar-container .main .features .dropdown .blog-link{
+    font-family: "Montserrat", Roboto, sans-serif;
+    padding: 5px;
+    display: block;
+}
+.navbar-container .main .features .dropdown .blog-link:hover{
+    color: #13374F;
+}
+.navbar-container .main .features .dropdown{
+    width: 420px;
+}
+.navbar-container .main .features:hover .dropdown{
+    display: block;
 }
 .navbar-container .main {
     width: 75%;
@@ -230,8 +276,6 @@ html, body {
 .navbar-container .main .left {
     float: left;
     width: calc(100% - 160px);
-    padding-top: 14px;
-    padding-bottom: 14px;
 }
 .navbar-container .options {
     width: 55px;
@@ -293,6 +337,25 @@ html, body {
 .navbar-container .second-navbar .page-name {
     color: #666666;
     margin-right: 0;
+}
+.navbar-container .dropdown .column-half {
+    float: left;
+    width: 50%;
+    padding: 10px;
+}
+.navbar-container .dropdown .column-half:first-child {
+    border-right: 1px solid #EEEEEE;
+}
+.navbar-container .dropdown .column-half li{
+    display: block;
+}
+.navbar-container .dropdown .column-half li a{
+    display: block;
+    padding: 8px 0;
+    color: #999999;
+}
+.navbar-container .dropdown .column-half li a:hover{
+    color: #666666;
 }
 
 @media screen and (min-width: 960px){
