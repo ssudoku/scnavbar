@@ -11,7 +11,11 @@ html, body {
 .navbar-container {
     display: none;
 }
-.navbar-mobile, .navbar-container {
+.navbar-mobile {
+    background: rgba(19, 55, 79, 0.3);
+    color: #FFFFFF;
+}
+.navbar-container {
     background: #13374F;
     color: #FFFFFF;
 }
@@ -329,6 +333,7 @@ html, body {
     .navbar-container ul li {
         display: inline-block;
         list-style-type: none;
+        position: relative;
     }
     .navbar-container ul {
         margin: 0;
@@ -402,6 +407,25 @@ html, body {
         background: #FFFFFF;
         padding: 5px;
         box-shadow: 0 0 5px 0 rgba(0,0,0,0.2);
+        z-index: 999;
+    }
+    .navbar-container .trending .dropdown {
+        width: 120px;
+        left: -60px;
+        margin-left: 50%;
+    }
+    .navbar-container .trending .dropdown li {
+        display: block;
+        text-align: center;
+        text-transform: uppercase;
+    }
+    .navbar-container .trending .dropdown .page {
+        padding: 5px 0;
+        display: block;
+        color: #999999;
+    }
+    .navbar-container .trending .dropdown .page:hover {
+        color: #13374F;
     }
     .navbar-container .dropdown:before {
         content: "";
@@ -414,6 +438,10 @@ html, body {
         border-left: 5px solid transparent;
         border-right: 5px solid transparent;
         border-bottom: 5px solid #FFFFFF;
+    }
+    .navbar-container .trending .dropdown:before {
+        left: -3px;
+        margin-left: 50%;
     }
     .navbar-container .dropdown .inner {
         background: #FFFFFF;
@@ -533,17 +561,24 @@ html, body {
     .navbar-container .trending-item {
         display: inline-block;
         padding: 14px;
+        position: relative;
         text-transform: uppercase;
         font-family: "Montserrat", Roboto, sans-serif;
     }
     .navbar-container .trending-item:hover {
         background: rgba(0,0,0,0.15);
     }
+    .navbar-container .trending li:hover .dropdown {
+        display: block;
+    }
     .navbar-container .trending .item-label{
         display: none;
     }
     .navbar-container .options-title{
         display: none;
+    }
+    .navbar-container .trending-title{
+        margin-bottom: 0;
     }
     .navbar-container .trending .item-label-desktop{
         display: initial;
@@ -663,6 +698,7 @@ html, body {
         display: block;
         padding: 8px 0;
         color: #999999;
+        text-transform: uppercase;
     }
     .navbar-container .dropdown .column-half li a:hover{
         color: #666666;
